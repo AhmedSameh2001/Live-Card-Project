@@ -1,0 +1,384 @@
+﻿@model LiveCards.Models.Card
+
+@{
+    ViewBag.Title = Localize["CardDetails"] + " - " + Model.Name;
+
+    var data = ViewBag.agentData;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+@section actions{
+<a href="/admin/cards/" class="btn btn-link btn-float has-text"><i class="icon-stars "></i><span>@Localize["AllCards"] </span></a>
+}
+
+
+
+
+
+@using (Html.BeginForm("Update", "Cards", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"> @Localize["CardDetails"]</h3>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label> @Localize["Name"]</label>
+
+                                @Html.TextBoxFor(m => m.Name, "", new { @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>@Localize["Category"]</label>
+                                <select asp-for="Brand.CategoryId" class="form-control" id="select_categories">
+                                    <option value="">@Localize["All"]</option>
+
+                                    @foreach (Category item in (List<Category>)ViewData["Categories"])
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>@Localize["Brand"]</label>
+                                <select asp-for="BrandId" class="form-control" id="select_brands">
+                                    @foreach (Brand item in (List<Brand>)ViewData["Brands"])
+                                    {
+                                        <option value="@item.Id" category-id="@item.CategoryId">   @item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>
+                                    @Localize["Cost"]
+                                </label>
+
+                                <div class="input-group mb-3">
+                                    <input asp-for="CostUSD" type="number" class="form-control  calc_percent input-cost" onchange=" calculate_price_amount();">
+
+                                    <span class="input-group-text">$</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <label>@Localize["AgentPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="AgentPercent" type="number" class="form-control " id="agent-percent" onchange=" calculate_price_amount();"
+                                               placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control " id="agent-amount" placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @* <label>@Localize["PricePerDealer"]</label>
+                                @Html.TextBoxFor(x => x.AgentPercent, new { @class = "form-control" })*@
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <div class="form-group  price">
+                                <div class="row">
+                                    <label>@Localize["DistributorPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="SellerPercent" type="number" class="form-control" id="seller-percent" onchange=" calculate_price_amount();"
+                                               placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control" id="seller-amount"
+                                               placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group  price">
+                                <div class="row">
+                                    <label>@Localize["CustomerPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="CustomerPercent" type="number" class="form-control" id="customer-percent" onchange=" calculate_price_amount();"
+                                               placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control" id="customer-amount" placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>@Localize["Notes"]</label>
+                                @Html.TextBoxFor(x => x.Note, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 ">
+                            <div class="form-group">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input"
+                                       name="Active" value="true" checked>
+                                    <span class="custom-control-label">  @Localize["Active"]</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 ">
+                            <div class="form-group">
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input"
+                                       name="AddToAgents" value="true">
+                                    <span class="custom-control-label">  @Localize["UpdatePriceToAllAgents"]</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success pull-right">@Localize["Update"]</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h3 class="card-title"> @Localize["UpdateImage"]</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <img src="@Model.Image" width="300" height="350" />
+
+
+                                        <label class="form-label">@Localize["Image"] <span class="text-red">*</span></label>
+                                        <input type="file" name="Image" class="file-input" data-main-class="input-group-xs" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h3 class="card-title"> @Localize["Agents"]</h3>
+
+                            <div class="card-options">
+                                @*  <a class="btn btn-primary btn-sm m-1 " id="checkAll">@Localize["SelectAll"]</a>
+                                    <a class="btn btn-default  btn-sm m-1" id="uncheckAll">@Localize["ClearSelection"]</a>
+                                    <a class="btn btn-default btn-sm " id="check_main">@Localize["SelectAllDealersOnly"]</a>
+                                    <a class="btn btn-default  btn-sm" id="check_sub">@Localize["SelectAllSubDealersOnly"]</a>*@
+
+                            </div>
+                        </div>
+
+
+                        <div class="card-body">
+                            <div class="row">
+                                <table class="table">
+                                    <tr>
+                                        <th>Agent</th>
+                                        <th>Cost</th>
+                                        <th>Active</th>
+                                        <th></th>
+                                    </tr>
+
+                                    @foreach (var item in Model.AgentCards)
+                                    {
+                                        <tr>
+                                            <td>@item.Agent.Name</td>
+                                            <td>@item.Cost</td>
+                                            <td>@item.IsActive</td>
+                                            <td><button type="button" class="btn btn-secondary btn-sm">change</button></td>
+                                        </tr>
+                                    }
+                                </table>
+
+
+                                @*  <ul id="dvTest" class="tree  ">
+                                    </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section scripts{
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+        $("#select_categories").on("change", function() {
+            var value = $(this).val();
+            $("#select_brands option").filter(function() {
+                $(this).toggle(value == "" || $(this).attr("category-id") == value)
+            });
+        });
+    });
+
+
+    function calculate_price_amount() {
+        var cost = parseInt($("#CostUSD").val());
+
+        $("#agent-amount").val(cost + (cost * parseInt($("#agent-percent").val()) / 100));
+        $("#seller-amount").val(cost + (cost * parseInt($("#seller-percent").val()) / 100));
+        $("#customer-amount").val(cost + (cost * parseInt($("#customer-percent").val()) / 100));
+        //$("#customer-percent").val( cost * percent / 100 );
+    }
+
+
+    $('#select_brands').select2({
+        placeholder: 'Select an option'
+    });
+
+
+    calculate_price_amount();
+
+</script>
+
+<script>
+
+    var allDealers = @Html.Raw(data) ;
+
+    function getSub(dealer) {
+
+        var text = "";
+
+        if (dealer == null || dealer.status == 1) {
+            text = "";
+            dealers = "<li>    <input type='checkbox' name='dealerId' value='" + dealer.Id + "'  " + dealer.isChecked + " /> " + dealer.Name + " <ul> "
+
+        }
+        var main_dealer_class = "sub_dealer";
+        if (dealer.HeadDelear == null) {
+            main_dealer_class = "main_dealer";
+        }
+
+        if (dealer.SubCount == 0) {
+            text = "<li >   <input type='checkbox' class='" + main_dealer_class + "'  name='dealerId' value='" + dealer.Id + "'  " + dealer.isChecked + "/>     " + dealer.Name + " <span class='badge bg-default badge-sm me-1 mb-1 mt-1'>10$</span>   </li>";
+        }
+        else {
+
+            var subDealers = allDealers.filter(function(el) { return el.HeadDelear == dealer.Id });
+            text = "<li >    <input type='checkbox' class='" + main_dealer_class + "'  name='dealerId' value='" + dealer.Id + "'  " + dealer.isChecked + " />   " + dealer.Name + " <span class='badge bg-default badge-sm me-1 mb-1 mt-1'>10$</span>  <ul> ";
+            subDealers.forEach((element) => {
+                var xx = getSub(element);
+                text += xx;
+            });
+            text += "</ul>  </li> ";
+        }
+
+        //console.log(text);
+
+        dealer.status = 1;
+
+        return text;
+    }
+
+    var result = "";
+
+
+    allDealers.forEach((element) => {
+        if (element.status == 0) {
+            //console.log("qqqqqqqq");
+            result += getSub(element);
+            $("#dvTest").html($("#dvTest").html() + getSub(element));
+
+        }
+    });
+
+
+    $("#check_main").click(function() {
+        $('.sub_dealer').prop('checked', '');
+        $('.main_dealer').prop('checked', 'true');
+
+    });
+
+    $("#check_sub").click(function() {
+        $('.sub_dealer').prop('checked', 'true');
+        $('.main_dealer').prop('checked', '');
+
+    });
+
+
+    $(document).on('click', '.tree label', function(e) {
+        $(this).next('ul').fadeToggle();
+        e.stopPropagation();
+    });
+
+    $("#checkAll").on("click", function() {
+        $("input[name=dealerId]").prop('checked', 'true');
+    });
+
+    $("#uncheckAll").on("click", function() {
+        $("input[name=dealerId]").prop('checked', '');
+    });
+
+
+
+
+
+</script>
+
+    }

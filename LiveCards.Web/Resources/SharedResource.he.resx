@@ -1,0 +1,1243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>פעולות</value>
+  </data>
+  <data name="ActivateNumber" xml:space="preserve">
+    <value>שחרור מנוי</value>
+  </data>
+  <data name="ActivateSIMConfirmationMessage" xml:space="preserve">
+    <value>האם אתה בטוח שברצונך להפעיל את השבב؟</value>
+  </data>
+  <data name="Activationbatches" xml:space="preserve">
+    <value>קבוצות הפעלה</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>פעיל</value>
+  </data>
+  <data name="ActiveDealersToday" xml:space="preserve">
+    <value>מפיצים פעילים היום</value>
+  </data>
+  <data name="ActiveSubscriptions" xml:space="preserve">
+    <value>מנויים פעילים</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="AddAgent" xml:space="preserve">
+    <value>Add Agent</value>
+  </data>
+  <data name="AddComments" xml:space="preserve">
+    <value>הוסף הערות</value>
+  </data>
+  <data name="AddCompany" xml:space="preserve">
+    <value>הוסף חברה</value>
+  </data>
+  <data name="AddDays" xml:space="preserve">
+    <value>השלמת ימים</value>
+  </data>
+  <data name="AddNumbers" xml:space="preserve">
+    <value>הוסף מספרים</value>
+  </data>
+  <data name="AddPayment" xml:space="preserve">
+    <value>הוספת תנועת קרדיט</value>
+  </data>
+  <data name="AddProduct" xml:space="preserve">
+    <value>הוסף מוצר</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>מספר לקוח</value>
+  </data>
+  <data name="Advertys" xml:space="preserve">
+    <value>פרסום למפיצים</value>
+  </data>
+  <data name="AdvertysinArabic" xml:space="preserve">
+    <value>מודעות בערבית</value>
+  </data>
+  <data name="AdvertysinHebrew" xml:space="preserve">
+    <value>פרסום בעברית</value>
+  </data>
+  <data name="AffiliateDealer" xml:space="preserve">
+    <value>שיוך למפיץ</value>
+  </data>
+  <data name="Agents" xml:space="preserve">
+    <value>Agents</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>את הכל</value>
+  </data>
+  <data name="AllAdvertys" xml:space="preserve">
+    <value>כל הפרסום</value>
+  </data>
+  <data name="AllCompanies" xml:space="preserve">
+    <value>כל החברות</value>
+  </data>
+  <data name="AllCompanysPackages" xml:space="preserve">
+    <value>כל חבילות החברות</value>
+  </data>
+  <data name="AllDealers" xml:space="preserve">
+    <value>כל העוסקים</value>
+  </data>
+  <data name="Allownegativecredittotheseller" xml:space="preserve">
+    <value>אפשר קרדיט שלילי למפיץ</value>
+  </data>
+  <data name="Allowsubdistributors" xml:space="preserve">
+    <value>אפשר תתי מפיצים</value>
+  </data>
+  <data name="AllPackages" xml:space="preserve">
+    <value>כל החבילות</value>
+  </data>
+  <data name="AllServices" xml:space="preserve">
+    <value>כל הקריאות שירות</value>
+  </data>
+  <data name="AllStatus" xml:space="preserve">
+    <value>כל הסטטוסים</value>
+  </data>
+  <data name="AllSubscriptions" xml:space="preserve">
+    <value>מנויים</value>
+  </data>
+  <data name="AllUsers" xml:space="preserve">
+    <value>כל המשתמשים</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>סה"כ</value>
+  </data>
+  <data name="Amount2" xml:space="preserve">
+    <value>סכום</value>
+  </data>
+  <data name="APILog" xml:space="preserve">
+    <value>API Log</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>ערבית</value>
+  </data>
+  <data name="Automatic" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="AutomaticRenewal" xml:space="preserve">
+    <value>חידוש אוטומטי</value>
+  </data>
+  <data name="AutomaticRenewalToday" xml:space="preserve">
+    <value>חידוש אוטמטי היום</value>
+  </data>
+  <data name="AutoRenewal" xml:space="preserve">
+    <value>חידוש אוטומטי</value>
+  </data>
+  <data name="BelongsToInvoices" xml:space="preserve">
+    <value>שייך לחשבוניות</value>
+  </data>
+  <data name="BillingCycle" xml:space="preserve">
+    <value>מחזור חיוב</value>
+  </data>
+  <data name="Bills" xml:space="preserve">
+    <value>שטרות</value>
+  </data>
+  <data name="BlockAddsubSubscription" xml:space="preserve">
+    <value>יתרת אינה מאפשרת פתיחת מנוי חדש</value>
+  </data>
+  <data name="BlockSIMConfirmationMessage" xml:space="preserve">
+    <value>האם אתה בטוח שברצונך להשבית את השבב?</value>
+  </data>
+  <data name="Browsed" xml:space="preserve">
+    <value>גלשת</value>
+  </data>
+  <data name="BrowseSize" xml:space="preserve">
+    <value>גלישה</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="CanCutDuringOffer" xml:space="preserve">
+    <value>אפשר לנתק לפני סיום תקופת המבצע</value>
+  </data>
+  <data name="ChangeAutoRenewal" xml:space="preserve">
+    <value>שינוי חידוש אוטומטי</value>
+  </data>
+  <data name="ChangeCutDate" xml:space="preserve">
+    <value>שינוי תאריך ניתו</value>
+  </data>
+  <data name="ChangeDealer" xml:space="preserve">
+    <value>שיוך מנוי למפיץ</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>שנה לוגו</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>שינוי סיסמה</value>
+  </data>
+  <data name="ChangePermission" xml:space="preserve">
+    <value>הרשאת שינוי</value>
+  </data>
+  <data name="ChangePrice" xml:space="preserve">
+    <value>לשנות מחיר</value>
+  </data>
+  <data name="ChangeSIM" xml:space="preserve">
+    <value>החלפת סים</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>עיר</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>נקה הכל</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>נקה בחירה</value>
+  </data>
+  <data name="CloseAccount" xml:space="preserve">
+    <value>סגירת חשבון</value>
+  </data>
+  <data name="CloseAccountDate" xml:space="preserve">
+    <value>סגירת חשבון מתאריך</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>קוד</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="Companies" xml:space="preserve">
+    <value>חברות</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>שם החברה</value>
+  </data>
+  <data name="Companylogo" xml:space="preserve">
+    <value>לוגו חברה</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>שם החברה</value>
+  </data>
+  <data name="CompanysPackages" xml:space="preserve">
+    <value>חבילות חברות</value>
+  </data>
+  <data name="CompleteAddress" xml:space="preserve">
+    <value>כתובת מלאה</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>אשר סיסמה</value>
+  </data>
+  <data name="ConnectionDate" xml:space="preserve">
+    <value>תאריך חיבור</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>תוכן</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>מחיר עלות</value>
+  </data>
+  <data name="CreateCreditInvoice" xml:space="preserve">
+    <value>הפקת חשבונית זיכוי</value>
+  </data>
+  <data name="CreateDocument" xml:space="preserve">
+    <value>הפקת מסמך</value>
+  </data>
+  <data name="Createdon" xml:space="preserve">
+    <value>תאריך הוספה</value>
+  </data>
+  <data name="CreateProductionReceipt" xml:space="preserve">
+    <value>הפקת קבלה</value>
+  </data>
+  <data name="CreateTaxInvoice" xml:space="preserve">
+    <value>הפקת חשבונית מס</value>
+  </data>
+  <data name="CreateTaxInvoiceReceipt" xml:space="preserve">
+    <value>הפקת חשבונית מס / קבלה</value>
+  </data>
+  <data name="CreateTransactionInvoice" xml:space="preserve">
+    <value>הפקת חשבונית  עסקה</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>קרדיט</value>
+  </data>
+  <data name="CreditInvoice" xml:space="preserve">
+    <value>חשבונית זיכוי</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>מטבע</value>
+  </data>
+  <data name="CurrentLogo" xml:space="preserve">
+    <value>לוגו נוכחי</value>
+  </data>
+  <data name="CustomerContactPhone" xml:space="preserve">
+    <value>מספר טלפון</value>
+  </data>
+  <data name="CustomerData" xml:space="preserve">
+    <value>נתוני לקוחות</value>
+  </data>
+  <data name="CutDateChangeTip" xml:space="preserve">
+    <value>שינוי תאריך ניתוק לא מבצע חיוב</value>
+  </data>
+  <data name="Cutoffdate" xml:space="preserve">
+    <value>תאריך ניתוק</value>
+  </data>
+  <data name="CycleBilling" xml:space="preserve">
+    <value>חזור חיוב</value>
+  </data>
+  <data name="DailyReport" xml:space="preserve">
+    <value>דו"ח יומי</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>תאריך</value>
+  </data>
+  <data name="DateAdded" xml:space="preserve">
+    <value>תאריך הוספה</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>תאריך מ</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>תאריך ל</value>
+  </data>
+  <data name="day" xml:space="preserve">
+    <value>יום</value>
+  </data>
+  <data name="days" xml:space="preserve">
+    <value>ימים</value>
+  </data>
+  <data name="DaysAgo" xml:space="preserve">
+    <value>לפני {0} ימים</value>
+  </data>
+  <data name="Dealer" xml:space="preserve">
+    <value>מפיץ</value>
+  </data>
+  <data name="DealerChangePriceTip" xml:space="preserve">
+    <value>הזן מחיר או 0 למחיר רגיל</value>
+  </data>
+  <data name="DealerCompany" xml:space="preserve">
+    <value>חברת סוחרים</value>
+  </data>
+  <data name="DealerCompanyDetails" xml:space="preserve">
+    <value>פרטי חברת הסוחרים</value>
+  </data>
+  <data name="DealerDetails" xml:space="preserve">
+    <value>פרטי מפיץ</value>
+  </data>
+  <data name="DealerName" xml:space="preserve">
+    <value>שם המפיץ</value>
+  </data>
+  <data name="Dealers" xml:space="preserve">
+    <value>סוחרים</value>
+  </data>
+  <data name="DealersCompanies" xml:space="preserve">
+    <value>חברות סוחרים</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>מחיקה</value>
+  </data>
+  <data name="DeleteConfirmationMessage" xml:space="preserve">
+    <value>האם אתה בטוח למחוק؟</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="DetailsDealerCompany" xml:space="preserve">
+    <value>פרטי חברת סוחרים</value>
+  </data>
+  <data name="DetailsUser" xml:space="preserve">
+    <value>פרטי משתמש</value>
+  </data>
+  <data name="Difference" xml:space="preserve">
+    <value>הפרש</value>
+  </data>
+  <data name="DisconnectionsToday" xml:space="preserve">
+    <value>ניתוקים היום</value>
+  </data>
+  <data name="Distributor" xml:space="preserve">
+    <value>מפיץ</value>
+  </data>
+  <data name="DocumentList" xml:space="preserve">
+    <value>רשימת המסמכים</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>אין לך חשבון</value>
+  </data>
+  <data name="DownloadFiles" xml:space="preserve">
+    <value>תיעוד העלאות</value>
+  </data>
+  <data name="DownloadTemplate" xml:space="preserve">
+    <value>תבנית הקובץ להעלאה</value>
+  </data>
+  <data name="EditCompany" xml:space="preserve">
+    <value>ערוך חברה</value>
+  </data>
+  <data name="EditSetting" xml:space="preserve">
+    <value>ערוך הגדרה</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>אימייל</value>
+  </data>
+  <data name="Email2" xml:space="preserve">
+    <value>דוא"ל</value>
+  </data>
+  <data name="EmailMsg" xml:space="preserve">
+    <value>הזן דוא"ל</value>
+  </data>
+  <data name="EmptyDataMessage" xml:space="preserve">
+    <value>לא נמצאו רשומות מתאימות</value>
+  </data>
+  <data name="EnableAutoRenewal" xml:space="preserve">
+    <value>חידוש אוטומטי מופעל</value>
+  </data>
+  <data name="EnterActivationCode" xml:space="preserve">
+    <value>אנא הכנס את קוד ההפעלה</value>
+  </data>
+  <data name="ExistingCompanyLogo" xml:space="preserve">
+    <value>ExistingCompanyLogo</value>
+  </data>
+  <data name="ExpectedRevenue" xml:space="preserve">
+    <value>צפי הכנסות</value>
+  </data>
+  <data name="ExportAllNumbers" xml:space="preserve">
+    <value>יצוא כל המספרים</value>
+  </data>
+  <data name="ExportOpenCalls" xml:space="preserve">
+    <value>יצוא קריאות פתוחות</value>
+  </data>
+  <data name="ExportReport" xml:space="preserve">
+    <value>יצוא דו"ח</value>
+  </data>
+  <data name="ExportSelectedPayments" xml:space="preserve">
+    <value>יצוא תשלומים</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>פקס</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>קובץ</value>
+  </data>
+  <data name="FileDescription" xml:space="preserve">
+    <value>תיאור הקובץ בקצרה</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>שם קובץ</value>
+  </data>
+  <data name="FillCustomerInformation" xml:space="preserve">
+    <value>אנא מלא את פרטי הלקוח</value>
+  </data>
+  <data name="Firstname" xml:space="preserve">
+    <value>שם פרטי</value>
+  </data>
+  <data name="Freelines" xml:space="preserve">
+    <value>קוים פנויים</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>מתאריך</value>
+  </data>
+  <data name="GBLeftMessage" xml:space="preserve">
+    <value>ניצול חבילת גלישה: {0} GB מתוך {1} GB</value>
+  </data>
+  <data name="GeneralInformation" xml:space="preserve">
+    <value>נתוני מיקום</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>הצג</value>
+  </data>
+  <data name="Hebrew" xml:space="preserve">
+    <value>עברית</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>ראשי</value>
+  </data>
+  <data name="HoursAgo" xml:space="preserve">
+    <value>לפני {0} שעות</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ת.ז</value>
+  </data>
+  <data name="InActive" xml:space="preserve">
+    <value>לא פעיל</value>
+  </data>
+  <data name="InActiveSubscriptions" xml:space="preserve">
+    <value>מנויים מושהים</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>עריכת מפיץ</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>חשבונית מס</value>
+  </data>
+  <data name="JustNow" xml:space="preserve">
+    <value>רק עכשיו</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>שפת ממשק</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>עברית</value>
+  </data>
+  <data name="Lastname" xml:space="preserve">
+    <value>שם משפחה</value>
+  </data>
+  <data name="LastUpdate" xml:space="preserve">
+    <value>עדכון אחרון</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>נותרו</value>
+  </data>
+  <data name="lines" xml:space="preserve">
+    <value>קוים</value>
+  </data>
+  <data name="Linkdocuments" xml:space="preserve">
+    <value>קישור מסמכים</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>התחברות</value>
+  </data>
+  <data name="loginAs" xml:space="preserve">
+    <value>התחברות כ- </value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>התחבר לחשבון האישי שלי</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>התנתק</value>
+  </data>
+  <data name="MainDealer" xml:space="preserve">
+    <value>מפיץ אב</value>
+  </data>
+  <data name="MainSeries" xml:space="preserve">
+    <value>סדרה ראשית</value>
+  </data>
+  <data name="MaxSIMDefine" xml:space="preserve">
+    <value>MaxSIM הוא CRM לספקי סלולר, הוא מאפשר לך לספק שירותי מכירה כגון ניהול מנויים, חבילות ודיווחים עבור הלקוחות שלך.</value>
+  </data>
+  <data name="MaxsimDefineTitlefor" xml:space="preserve">
+    <value>MaxSIM עבור שירותי ניהול SIM של Cellurlar.</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>הודעות</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>שיחה</value>
+  </data>
+  <data name="Minute22" xml:space="preserve">
+    <value>דקות</value>
+  </data>
+  <data name="MinuteAgo" xml:space="preserve">
+    <value>לפני {0} דקות</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>שיחות</value>
+  </data>
+  <data name="MinutesAgo" xml:space="preserve">
+    <value>לפני {0} דקות</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>נייד</value>
+  </data>
+  <data name="MobilePhone" xml:space="preserve">
+    <value>טלפון נייד</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>חודש</value>
+  </data>
+  <data name="Months" xml:space="preserve">
+    <value>מספר החודשים</value>
+  </data>
+  <data name="Movingnumber" xml:space="preserve">
+    <value>ניוד מספר</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>החשבון שלי</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>חדש</value>
+  </data>
+  <data name="NewAdvert" xml:space="preserve">
+    <value>הודעה חדשה</value>
+  </data>
+  <data name="NewAdvertys" xml:space="preserve">
+    <value>מודעות חדשות</value>
+  </data>
+  <data name="NewCompany" xml:space="preserve">
+    <value>NewCompany</value>
+  </data>
+  <data name="NewDealer" xml:space="preserve">
+    <value>הוספת מפיץ</value>
+  </data>
+  <data name="NewDealerSubscription" xml:space="preserve">
+    <value>מנוי חדש למפיץ</value>
+  </data>
+  <data name="NewDelear" xml:space="preserve">
+    <value>מפיץ חדש</value>
+  </data>
+  <data name="NewDelearCompany" xml:space="preserve">
+    <value>חברת סוחרים חדשה</value>
+  </data>
+  <data name="NewDocument" xml:space="preserve">
+    <value>הפקת מסמך חדש</value>
+  </data>
+  <data name="NewNumber" xml:space="preserve">
+    <value>טלפון חדש</value>
+  </data>
+  <data name="NewPackage" xml:space="preserve">
+    <value>חבילה חדשה</value>
+  </data>
+  <data name="NewPackageCompany" xml:space="preserve">
+    <value>חברת חבילות חדשות</value>
+  </data>
+  <data name="NewPermissions" xml:space="preserve">
+    <value>הרשאות חדשות</value>
+  </data>
+  <data name="NewRole" xml:space="preserve">
+    <value>תפקיד חדש</value>
+  </data>
+  <data name="NewSimNumber" xml:space="preserve">
+    <value>מספר סים חדש</value>
+  </data>
+  <data name="NewSubscription" xml:space="preserve">
+    <value>מנוי חדש</value>
+  </data>
+  <data name="NewSubscriptions" xml:space="preserve">
+    <value>מנויים חדשים</value>
+  </data>
+  <data name="NewSubscriptionsToday" xml:space="preserve">
+    <value>מנויים חדשים היום</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>משתמש חדש</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>אין נתונים</value>
+  </data>
+  <data name="Noofpayments" xml:space="preserve">
+    <value>מס' תשלומים</value>
+  </data>
+  <data name="NoOfRecord" xml:space="preserve">
+    <value>חדשים</value>
+  </data>
+  <data name="Noofsubscribers" xml:space="preserve">
+    <value>מס' מנויים</value>
+  </data>
+  <data name="NormalPrice" xml:space="preserve">
+    <value>מחיר רגיל</value>
+  </data>
+  <data name="Nosubscribers" xml:space="preserve">
+    <value>מס' מנויים</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>הערה</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>התראות</value>
+  </data>
+  <data name="NotPaid" xml:space="preserve">
+    <value>לא שולם</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>מס' טלפון</value>
+  </data>
+  <data name="Numbers" xml:space="preserve">
+    <value>מספרי טלפון</value>
+  </data>
+  <data name="NumbersToRemove" xml:space="preserve">
+    <value>מספרים להסרה</value>
+  </data>
+  <data name="Offer" xml:space="preserve">
+    <value>מבצע</value>
+  </data>
+  <data name="OfferCutError" xml:space="preserve">
+    <value>لا يمكن فصل الاشتراك لهذا العرض</value>
+  </data>
+  <data name="OfferPrice" xml:space="preserve">
+    <value>מחיר מבצע למנוי החדש</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>בסדר</value>
+  </data>
+  <data name="OldCompany" xml:space="preserve">
+    <value>חברה ננטשת</value>
+  </data>
+  <data name="OneDayAgo" xml:space="preserve">
+    <value>לפני יום</value>
+  </data>
+  <data name="OneHourAgo" xml:space="preserve">
+    <value>לפני שעה</value>
+  </data>
+  <data name="OneMinuteAgo" xml:space="preserve">
+    <value>לפני {0} דקות</value>
+  </data>
+  <data name="OneWeekAgo" xml:space="preserve">
+    <value>מאז שבוע</value>
+  </data>
+  <data name="Openaservicecall" xml:space="preserve">
+    <value>פתח קריאת שירות</value>
+  </data>
+  <data name="Opencalls" xml:space="preserve">
+    <value>קריאות פתוחות</value>
+  </data>
+  <data name="OpenDealerBills" xml:space="preserve">
+    <value>תשלומים פתוחים למפיצים</value>
+  </data>
+  <data name="OpenOperatorBills" xml:space="preserve">
+    <value>תשלומיים למפעיל</value>
+  </data>
+  <data name="OpenPayments" xml:space="preserve">
+    <value>תשלומים פתוחים</value>
+  </data>
+  <data name="OpenSubscriptionBills" xml:space="preserve">
+    <value>תשלומים פתוחים למנויים</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>עוד</value>
+  </data>
+  <data name="Package" xml:space="preserve">
+    <value>חבילה</value>
+  </data>
+  <data name="PackageAvailabletoDistributors" xml:space="preserve">
+    <value>חבילה זמינה למפיצים</value>
+  </data>
+  <data name="PackageDetails" xml:space="preserve">
+    <value>פרטי החבילה</value>
+  </data>
+  <data name="PackageNoOffer" xml:space="preserve">
+    <value>ללא מבצע</value>
+  </data>
+  <data name="PackageOfferLabel" xml:space="preserve">
+    <value>מבצע {0} חודשים</value>
+  </data>
+  <data name="Packages" xml:space="preserve">
+    <value>חבילות</value>
+  </data>
+  <data name="PackagesPrices" xml:space="preserve">
+    <value>מחירי חבילות</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>שולם</value>
+  </data>
+  <data name="Paidup" xml:space="preserve">
+    <value>שולם</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>סיסמה</value>
+  </data>
+  <data name="PasswordMsg" xml:space="preserve">
+    <value>הזן את הסיסמה</value>
+  </data>
+  <data name="PauseNumber" xml:space="preserve">
+    <value>הקפאת מנוי</value>
+  </data>
+  <data name="Payments" xml:space="preserve">
+    <value>תשלומים</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>סוג תשלום</value>
+  </data>
+  <data name="PaymentUpdate" xml:space="preserve">
+    <value>עדכון תשלום</value>
+  </data>
+  <data name="PendingServices" xml:space="preserve">
+    <value>קריאות שירות</value>
+  </data>
+  <data name="Percentage" xml:space="preserve">
+    <value>אחוזים</value>
+  </data>
+  <data name="Performsby" xml:space="preserve">
+    <value>לביצוע עד</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>הרשאה</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>טלפון</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>מספר מנוי</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="Prepaid" xml:space="preserve">
+    <value>שׁוּלָם מִרֹאשׁ</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>מחיר</value>
+  </data>
+  <data name="PricePerClient" xml:space="preserve">
+    <value>מחיר ללקוח</value>
+  </data>
+  <data name="PricePerCustomer" xml:space="preserve">
+    <value>מחיר ללקוח</value>
+  </data>
+  <data name="PricePerDealer" xml:space="preserve">
+    <value>מחיר למפיץ</value>
+  </data>
+  <data name="PricePerOperator" xml:space="preserve">
+    <value>מחיר למפעיל</value>
+  </data>
+  <data name="PricePerShop" xml:space="preserve">
+    <value>מחיר לחנות</value>
+  </data>
+  <data name="PricePerShopping" xml:space="preserve">
+    <value>Price Per Shopping</value>
+  </data>
+  <data name="PricePerSubDealer" xml:space="preserve">
+    <value>מחיר לתת מפיץ</value>
+  </data>
+  <data name="PricePerSubscription" xml:space="preserve">
+    <value>מחיר למנוי</value>
+  </data>
+  <data name="PriceUpdated" xml:space="preserve">
+    <value>עדכן מחיר</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>דחיפות</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>החשבון שלי</value>
+  </data>
+  <data name="Reading17" xml:space="preserve">
+    <value>קריאה </value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>קבלה</value>
+  </data>
+  <data name="Receives14DaysCalls" xml:space="preserve">
+    <value>מקבל שיחות 14 ימים</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>אסמכתא</value>
+  </data>
+  <data name="Refrech" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="Regular" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="Regulardisconnection" xml:space="preserve">
+    <value>ניתוק קבוע</value>
+  </data>
+  <data name="RemainingDays" xml:space="preserve">
+    <value>ימים לסיום המנוי</value>
+  </data>
+  <data name="RemmberMe" xml:space="preserve">
+    <value>זכור אותי</value>
+  </data>
+  <data name="RemoveColumnNumber" xml:space="preserve">
+    <value>העתק את עמודת המספרים מקובץ האקסל או הזן רשימת מספרים &lt;br/&gt;
+  כל מספר בשורה חדשה</value>
+  </data>
+  <data name="RemoveNotUsedNumber" xml:space="preserve">
+    <value>הסרת מספרי טלפון שאינם בשימוש</value>
+  </data>
+  <data name="RemoveNumbers" xml:space="preserve">
+    <value>הסרת מספרים</value>
+  </data>
+  <data name="Renew" xml:space="preserve">
+    <value>הארכה</value>
+  </data>
+  <data name="RenewForMonth" xml:space="preserve">
+    <value>הארכה חודש</value>
+  </data>
+  <data name="RenewMonthforSelected" xml:space="preserve">
+    <value>הארכה לחודש לקוים שנבחרו</value>
+  </data>
+  <data name="RenewToDate" xml:space="preserve">
+    <value>חידוש למועד ספציפי</value>
+  </data>
+  <data name="ReportDealerCompany" xml:space="preserve">
+    <value>דו"ח מפיצים לפי חברות</value>
+  </data>
+  <data name="ReturnToAdmin" xml:space="preserve">
+    <value>חזרה למפעיל</value>
+  </data>
+  <data name="RevenueToday" xml:space="preserve">
+    <value>הכנסות היום</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>הרשאה</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>תפקידים</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>חיפוש</value>
+  </data>
+  <data name="SearchResults" xml:space="preserve">
+    <value>תוצאות חיפוש</value>
+  </data>
+  <data name="SecondarySeries" xml:space="preserve">
+    <value>סידרה משנית</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>בחר</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>סמן הכל</value>
+  </data>
+  <data name="SelectAllDealersOnly" xml:space="preserve">
+    <value>בחר את כל העוסקים בלבד</value>
+  </data>
+  <data name="SelectAllSubDealersOnly" xml:space="preserve">
+    <value>בחר בכל סוחרי המשנה בלבד</value>
+  </data>
+  <data name="SelectCompany" xml:space="preserve">
+    <value>חברה ננטשת</value>
+  </data>
+  <data name="Selected" xml:space="preserve">
+    <value>בחר</value>
+  </data>
+  <data name="Selectfiletoupload" xml:space="preserve">
+    <value>בחר קובץ להעלאה</value>
+  </data>
+  <data name="SelectNumber" xml:space="preserve">
+    <value>בחר מספר</value>
+  </data>
+  <data name="SelectPackage" xml:space="preserve">
+    <value>בחר חבילה</value>
+  </data>
+  <data name="SelectPayment" xml:space="preserve">
+    <value>אנא בחר תשלום</value>
+  </data>
+  <data name="selectpermissionyouwant" xml:space="preserve">
+    <value>בוחר הרשאה</value>
+  </data>
+  <data name="Series" xml:space="preserve">
+    <value>סדרה</value>
+  </data>
+  <data name="ServiceCall" xml:space="preserve">
+    <value>קריאת שירות</value>
+  </data>
+  <data name="ServiceCalls" xml:space="preserve">
+    <value>קריאות שירות</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>קריאות שירות</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>הגדרה</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="SIM" xml:space="preserve">
+    <value>SIM</value>
+  </data>
+  <data name="SIMCar" xml:space="preserve">
+    <value>SIM רכב</value>
+  </data>
+  <data name="SIMCarPrice" xml:space="preserve">
+    <value>מחיר SIM רכב</value>
+  </data>
+  <data name="SIMlength" xml:space="preserve">
+    <value>SIMlength</value>
+  </data>
+  <data name="SimLengthErrorMessage" xml:space="preserve">
+    <value>כרטיס ה- SIM חייב להיות  {0} מספרים</value>
+  </data>
+  <data name="SIMNumber" xml:space="preserve">
+    <value>מספר סים</value>
+  </data>
+  <data name="SinceYesterday" xml:space="preserve">
+    <value>אתמול</value>
+  </data>
+  <data name="SiteName" xml:space="preserve">
+    <value>שם אתר</value>
+  </data>
+  <data name="SizeGB" xml:space="preserve">
+    <value>נפח גלישה</value>
+  </data>
+  <data name="SMS" xml:space="preserve">
+    <value>הודעות SMS</value>
+  </data>
+  <data name="SMS1" xml:space="preserve">
+    <value>הודעה</value>
+  </data>
+  <data name="SourceReceipt" xml:space="preserve">
+    <value>קבלה מקור</value>
+  </data>
+  <data name="SourceTransactionInvoice" xml:space="preserve">
+    <value>חשבונית עסקה מקור</value>
+  </data>
+  <data name="SpecialPrice" xml:space="preserve">
+    <value>מחיר מיוחד</value>
+  </data>
+  <data name="SpecialPriceForDealer" xml:space="preserve">
+    <value>מחיר מיוחד למפיץ</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>סטטוס</value>
+  </data>
+  <data name="SubDealers" xml:space="preserve">
+    <value>תתי מפיצים</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>נושא</value>
+  </data>
+  <data name="SubscriberName" xml:space="preserve">
+    <value>שם המנוי</value>
+  </data>
+  <data name="Subscribers" xml:space="preserve">
+    <value>מנויים</value>
+  </data>
+  <data name="SubscribersBeforeDisconnecting" xml:space="preserve">
+    <value>מנויים לפני ניתוק</value>
+  </data>
+  <data name="Subscription" xml:space="preserve">
+    <value>מנוי</value>
+  </data>
+  <data name="SubscriptionDetails" xml:space="preserve">
+    <value>פרטי המנוי</value>
+  </data>
+  <data name="SubscriptionNumber" xml:space="preserve">
+    <value>מס' מנוי</value>
+  </data>
+  <data name="SubscriptionPeriod" xml:space="preserve">
+    <value>משך המנוי</value>
+  </data>
+  <data name="Subscriptions" xml:space="preserve">
+    <value>מנויים</value>
+  </data>
+  <data name="SubscriptionsFiles" xml:space="preserve">
+    <value>קבצי מנויים</value>
+  </data>
+  <data name="SubscriptionsPendingSeparation" xml:space="preserve">
+    <value>מנויים בהמתנה להפרדה</value>
+  </data>
+  <data name="SubscriptionStatus" xml:space="preserve">
+    <value>סטטוס מנויים</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>השינויים נשמרו בהצלחה</value>
+  </data>
+  <data name="SwitchNumber" xml:space="preserve">
+    <value>ניוד מספר</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>תגים</value>
+  </data>
+  <data name="TaxableDocumentRequired" xml:space="preserve">
+    <value>מסמך חייב במע"מ</value>
+  </data>
+  <data name="TaxInvoice" xml:space="preserve">
+    <value>חשבונית מס / קבלה</value>
+  </data>
+  <data name="TaxType" xml:space="preserve">
+    <value>סוג מע"מ</value>
+  </data>
+  <data name="TheAmount" xml:space="preserve">
+    <value>בסכום</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>עד תאריך</value>
+  </data>
+  <data name="TodayReadings" xml:space="preserve">
+    <value>קריאות היום</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>נושא</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>סה"כ</value>
+  </data>
+  <data name="TotalMovements" xml:space="preserve">
+    <value>סך תנועות</value>
+  </data>
+  <data name="TotalPaymentSelectedPeriod" xml:space="preserve">
+    <value>סה"כ ששולמו לתקופה שנבחרה</value>
+  </data>
+  <data name="TryNow" xml:space="preserve">
+    <value>נסה עכשיו</value>
+  </data>
+  <data name="Unaffiliated" xml:space="preserve">
+    <value>ללא שיוך (על חשבון)</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>עדכון</value>
+  </data>
+  <data name="UpdateDataIfSubscriptionExists" xml:space="preserve">
+    <value>עדכן נתונים אם מנוי קיים</value>
+  </data>
+  <data name="UpdatePackage" xml:space="preserve">
+    <value>עדכון חבילה</value>
+  </data>
+  <data name="UpdatePrice" xml:space="preserve">
+    <value>עדכון מחיר</value>
+  </data>
+  <data name="UpdateStatus" xml:space="preserve">
+    <value>עדכון סטטוס  </value>
+  </data>
+  <data name="UpdateSubscriptionTitle" xml:space="preserve">
+    <value>עדכון מנוי מספר {0}</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>העלאת קובץ מנויים</value>
+  </data>
+  <data name="UploadingFiles" xml:space="preserve">
+    <value>העלאת קבצים</value>
+  </data>
+  <data name="UploadNumbersFile" xml:space="preserve">
+    <value>העלאת קובץ מספרים</value>
+  </data>
+  <data name="UploadSubscriptionsFile" xml:space="preserve">
+    <value>העלאת קובץ מנויים</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>משתמש</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>משתמשים</value>
+  </data>
+  <data name="VATExemptionDocument" xml:space="preserve">
+    <value>מסמך פטור מע"מ</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>אתר אינטרנט</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>שבוע</value>
+  </data>
+  <data name="WeeksAgo" xml:space="preserve">
+    <value>לפני {0} שבועות</value>
+  </data>
+  <data name="WithAutoRenewal" xml:space="preserve">
+    <value>רק מנויים עם חידוש אוטומטי</value>
+  </data>
+  <data name="WithholdingTax" xml:space="preserve">
+    <value>ניכוי מס במקור</value>
+  </data>
+  <data name="WithoutAutoRenewal" xml:space="preserve">
+    <value>רק מנויים ללא חידוש אוטומטי</value>
+  </data>
+  <data name="WithoutReceivingCalls" xml:space="preserve">
+    <value>בלי קבלת שיחות</value>
+  </data>
+  <data name="WithoutTax" xml:space="preserve">
+    <value>ללא מע"מ</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>מיקוד</value>
+  </data>
+</root>

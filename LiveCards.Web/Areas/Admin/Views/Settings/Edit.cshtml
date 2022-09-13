@@ -1,0 +1,49 @@
+﻿@model LiveCards.Models.Setting
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Setting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KKey" />
+            <div class="form-group">
+                <label asp-for="KVal" class="control-label"></label>
+                <input asp-for="KVal" class="form-control" />
+                <span asp-validation-for="KVal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Group" class="control-label"></label>
+                <input asp-for="Group" class="form-control" />
+                <span asp-validation-for="Group" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DefaultValue" class="control-label"></label>
+                <input asp-for="DefaultValue" class="form-control" />
+                <span asp-validation-for="DefaultValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

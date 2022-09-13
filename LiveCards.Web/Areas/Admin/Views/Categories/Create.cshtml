@@ -1,0 +1,100 @@
+﻿@model LiveCards.Models.Category
+
+@{
+    ViewData["Title"] = @Localize["CreateCategory"];
+}
+
+@section Actions{
+
+    <a href="/admin/categories" class="btn btn-primary mt-2">
+        <i class="fe fe-list"></i>
+
+        @Localize["AllCategories"]
+    </a>
+ }
+  
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> @Localize["NewCategory"]</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="Create" asp-area="Admin"  >
+                <div class="row">
+
+                    @*@Html.AntiForgeryToken()*@
+                               <div asp-validation-summary="All" class="text-danger"></div>
+
+
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">@Localize["Name"] <span class="text-red">*</span></label>
+                            <input asp-for="Name" class="form-control" required />
+                            @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">@Localize["NameEn"] <span class="text-red">*</span></label>
+                            <input asp-for="NameEn" class="form-control" required />
+                            @Html.ValidationMessage("NameEn", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">@Localize["NameHe"] <span class="text-red">*</span></label>
+                            <input asp-for="NameHe" class="form-control" required />
+                            @Html.ValidationMessage("NameHe", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">@Localize["Order"] <span class="text-red">*</span></label>
+                            <input asp-for="Order" class="form-control" required />
+                            @Html.ValidationMessage("Order", "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input"
+                               asp-for="IsActive" value="true" checked>
+                            <span class="custom-control-label">  @Localize["Active"]</span>
+                        </label>
+
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input"
+                               asp-for="ShowInMenu" value="true" checked>
+                            <span class="custom-control-label">  @Localize["ShowInMenu"]</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">@Localize["AddCategory"]  <i class="icon-plus3 position-right"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+       
+        </form>
+    </div>
+            </div>
+
+
+
+    @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

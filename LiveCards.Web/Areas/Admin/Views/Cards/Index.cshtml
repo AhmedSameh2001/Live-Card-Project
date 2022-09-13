@@ -1,0 +1,191 @@
+﻿@model IEnumerable<LiveCards.Models.Card>
+@using LiveCards.Models;
+
+@{
+    ViewData["Title"] = @Localize["Cards"];
+}
+
+@section Actions{
+
+    <a href="/Admin/Cards/Create" class="btn btn-primary mt-2">
+        <i class="fe fe-plus-circle"></i>
+
+        @Localize["AddCArd"]
+    </a>
+ }
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> @Localize["Search"]</h3>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label> @Localize["Keyword"]</label>
+                            <input type="text" name="keyword" class="form-control " />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>  @Localize["Status"]</label>
+                            <select name="active" class="form-control ">
+                                <option value=""> @Localize["All"]</option>
+                                <option value="true"> @Localize["Active"]</option>
+                                <option value="false"> @Localize["InActive"]</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label> @Localize["Categories"] </label>
+                            <select name="categoryId" class="form-control " asp-items="ViewBag.Categories">
+                                <option value=""> @Localize["All"]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <label>  @Localize["Brands"] </label>
+                            <select name="brandId" class="form-control " asp-items="ViewBag.Brands">
+                                <option value="">  @Localize["All"]</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <button type="submit" class="btn btn-danger" id="btnSearch">
+                            @Localize["Search"]
+                        </button>
+                        <button type="reset" class="btn btn-default"> @Localize["Clear"]  </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> @Localize["Cards"]</h3>
+        </div>
+        <div class="card-body">
+
+            <table class="table dataTable   table-hover table-striped table-bordered table-sm"  id="basic-datatable">
+                <thead>
+                    <tr class="text-center ">
+                        @*<th> </th> *@
+                        <th>@Localize["Image"]</th>
+                        <th>@Localize["Name"]</th>
+                        <th>@Localize["API"]</th>
+                        <th>@Localize["Category"]</th>
+                        <th>@Localize["Active"]</th>
+                        <th>@Localize["DateAdded"]</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                {
+                    <tr class="pointer">
+                        @*                              <td>
+                    <input type="checkbox" name="AgentsId" value="@item.Id" />
+
+                    </td>*@
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';">
+                            <img src="@item.Image" loading="lazy" width="80" height="100" style="margin:auto;">
+                        </td>
+
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';">
+                            <a href="/Admin/cards/details/@item.Id"> @item?.Name  </a>
+                        </td>
+
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';">@item.ApiName  </td>
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';">@item.Brand?.Category?.Name <br /> @item.Brand?.Name</td>
+
+
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';" class="text-center ">
+                            @if (item.Active == true)
+                            {
+                                @*rounded-pill bg-info badge-sm me-1 mb-1 mt-1*@
+
+                                <span class="badge bg-success badge-sm">
+                                    @Localize["Active"]
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger badge-sm">
+                                    @Localize["InActive"]
+                                </span>
+                            }
+                        </td>
+                        <td onclick="window.location='/Admin/cards/details/@item.Id';" class="text-center ">
+                            @if (item.IsAvailable == true)
+                            {
+                                @Localize["Available"]
+                            }
+                            else
+                            {
+                                <label class="text-danger">
+                                    @Localize["Out of Stock"]
+                                </label>
+                            }
+                        </td>
+                        <td class="text-center ">
+
+                            @*   @if (AllowAgentsDetails)
+                        {*@
+                            <a class="text-primary" href="/Admin/cards/details/@item.Id">
+                                <i class=" fe  fe-edit-3"></i>
+                                @*<i class=" fe  fe-edit"></i>*@
+                            </a>
+                            @*}*@
+                            @*   @if (AllowDeleteAgents)
+
+                        {*@
+                            <a class="text-danger" href="/Admin/Agents/Delete/@item.Id">
+                                <i class="fe fe-trash"></i>
+                            </a>
+                            @*}*@
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+</div>
+
+
+@*<partial name="_pagination" />*@
+
+@section scripts{
+    <script src="/assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/responsive.bootstrap5.min.js"></script>
+
+    <script>
+        $('#basic-datatable').DataTable({
+            language: {
+                searchPlaceholder: 'Search...',
+                sSearch: '',
+            }
+        });
+
+
+    </script>
+}

@@ -1,0 +1,553 @@
+﻿@model LiveCards.Models.Agent
+
+
+@{
+    ViewData["Title"] = @Localize["Information"] + "-" + Model.Name;
+}
+
+@section actions{
+    <button class="btn btn-warning mt-1 mb-1"> <i class="fa fa-rss"></i> <span>SMS</span></button>
+    <button class="btn btn-primary mt-1 mb-1"> <i class="fa fa-rss"></i> <span>Email</span></button>
+    <button class="btn btn-secondary mt-1 mb-1"> <i class="fa fa-envelope"></i> <span>Message</span></button>
+
+}
+
+
+    <!-- ROW-1 OPEN -->
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3">
+            <div class="card">
+
+                <div class="card-body pb-0">
+                    <div class="">
+                        <nav class="nav float-end">
+                            <div class="dropdown">
+                                <a class="nav-link text-muted fs-20 p-0 ps-3" href="javascript:void(0)" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fe fe-more-vertical"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    @*   <a class="dropdown-item" href="javascript:void(0)"><i class="fe fe-user me-1"></i> Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fe fe-edit me-1"></i> Edit</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fe fe-users me-1"></i> New Group</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="fe fe-settings me-1"></i> Settings</a>*@
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="fe fe-trash-2 me-1"></i> Delete</a>
+                                </div>
+                            </div>
+                        </nav>
+
+                        <div class="text-center chat-image p-4 pb-0 mb-4 br-5">
+                            <div class="avatar avatar-xxl chat-profile mb-3 brround">
+                                <a class="" href="profile.html"><img alt="avatar" src="@Model.ApplicationUser.ProfileImage" class="brround"></a>
+                            </div>
+                            <div>
+
+                                <h5 class="mb-1 text-dark fw-semibold"> @Model.Name</h5>
+
+                                @if (Model.Active == true)
+                            {
+                                <span class="badge bg-success badge-sm  me-1 mb-1 mt-1">@Localize["Active"] </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger badge-sm  me-1 mb-1 mt-1">@Localize["InActive"] </span>
+
+                            }
+
+                            @* <p class="text-muted mt-0 mb-1 pt-0 fs-13">Senior Web Designer</p>*@
+                        </div>
+
+
+                    </div>
+                    <div class="">
+                        <h6 class="mb-3">Contact Details :</h6>
+                        <div class="d-flex mb-2">
+                            <div>
+                                <a class="nav-link border rounded-pill chat-profile me-2" href="javascript:void(0)"><i class="fe fe-mail"></i></a>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fs-13 fw-semibold mb-0">Email</p>
+                                <p class="fs-12 text-muted">@Model.ApplicationUser.Email</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-2 mt-2">
+                            <div>
+                                <a class="nav-link border rounded-pill chat-profile me-2" href="javascript:void(0)"><i class="fe fe-phone"></i></a>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fs-13 fw-semibold mb-0">Phone</p>
+                                <p class="fs-12 text-muted">@Model.Phone</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-2 mt-2">
+                            <div>
+                                <a class="nav-link border rounded-pill chat-profile me-2" href="javascript:void(0)"><i class="fe fe-phone"></i></a>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fs-13 fw-semibold mb-0">Mobile</p>
+                                <p class="fs-12 text-muted">
+                                    <tel>
+                                        @Model.Mobile
+                                    </tel>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-2 mt-2">
+                            <div>
+                                <a class="nav-link border rounded-pill chat-profile me-2" href="javascript:void(0)"><i class="fe fe-map-pin"></i></a>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fs-13 fw-semibold mb-0">City</p>
+                                <p class="fs-12 text-muted">@Model.City</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-2 mt-2">
+                            <div>
+                                <a class="nav-link border rounded-pill chat-profile me-2" href="javascript:void(0)"><i class="fe fe-map-pin"></i></a>
+                            </div>
+                            <div class="ms-2">
+                                <p class="fs-13 fw-semibold mb-0">Address</p>
+                                <p class="fs-12 text-muted">@Model.Address</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="main-profile-contact-list">
+                    <div class="me-5">
+                        <div class="media mb-4 d-flex">
+                            <div class="media-icon bg-secondary bradius me-3 mt-1">
+                                <i class="fe fe-dollar-sign fs-20 text-white"></i>
+                            </div>
+                            <div class="media-body">
+                                <span class="text-muted">@Localize["Credit"]</span>
+                                <div class="fw-semibold fs-25">
+                                    @Model.Credit $
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-5 mt-5 mt-md-0">
+                        <div class="media mb-4 d-flex">
+                            <div class="media-icon bg-danger bradius text-white me-3 mt-1">
+                                <span class="mt-3">
+                                    <i class="fe fe-users fs-20"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <span class="text-muted">@Localize["Distributors"]</span>
+                                <div class="fw-semibold fs-25">
+                                    @Model.Agents.Count()
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="me-0 mt-5 mt-md-0">
+                        <div class="media">
+                            <div class="media-icon bg-primary text-white bradius me-3 mt-1">
+                                <span class="mt-3">
+                                    <i class="fe fe-cast fs-20"></i>
+                                </span>
+                            </div>
+                            <div class="media-body">
+                                <span class="text-muted">@Localize["Sales"]</span>
+                                <div class="fw-semibold fs-25">
+                                    @*@Model.Sales.Count*@
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-9">
+
+        <div class="card">
+
+            <div class="tabs-menu">
+                <!-- Tabs -->
+                <ul class="nav panel-tabs">
+                    <li>
+                        <a href="#basicInformation" class="active" data-bs-toggle="tab">
+                            <i class="fe fe-edit-3  m-1"> </i>
+                            @Localize["BasicInformation"]
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cardsPrices" data-bs-toggle="tab">
+                            <i class="fe fe-package m-1"> </i>
+                            @Localize["CardsPrices"]
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sales" data-bs-toggle="tab">
+                            <i class="fe fe-cash m-1"> </i>
+                            @Localize["Sales"]
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#payments" data-bs-toggle="tab">
+                            <i class="fe fe-dollar-sign m-1"> </i>
+                            @Localize["Payments"]
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#loanRequests" data-bs-toggle="tab">
+                            <i class="fe fe-tag m-1"> </i>
+                            @Localize["LoanRequests"]
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="basicInformation">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"> @Localize["BasicInformation"]</div>
+                    </div>
+
+                    <div class="card-body">
+                        <form action="/Admin/Agents/Edit" method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label> @Localize["Name"] <span asp-validation-for="Name" class="text-danger">*</span></label>
+                                            <input asp-for="Name" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label> @Localize["Email"]</label>
+                                            <input asp-for="ApplicationUser.Email" class="form-control" />
+                                            <span asp-validation-for="ApplicationUser.Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>@Localize["Mobile"] </label>
+                                            <input asp-for="Mobile" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>@Localize["Phone"]  </label>
+
+                                            <input asp-for="Phone" class="form-control" />
+                                            <span asp-validation-for="Phone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label> @Localize["City"]</label>
+
+                                            <input asp-for="City" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label> @Localize["Address"]</label>
+                                            <input asp-for="Address" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label> @Localize["Credit"]:</label>
+                                            <label class="form-control"> @Model.Credit </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-4 p-20">
+                                        <div class="row">
+                                            <div class="col-lg-12  ">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           asp-for="AllowLoan" value="true" checked>
+                                                    <span class="custom-control-label">  @Localize["AllowLoans"]</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-lg-12 ">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           name="AllowSub" value="true" checked>
+                                                    <span class="custom-control-label">  @Localize["Allowsubdistributors"]</span>
+                                                </label>
+                                                <span asp-validation-for="AllowSub" class="text-danger"></span>
+                                            </div>
+
+                                            <div class="col-lg-12 ">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           name="Active" value="true" checked>
+                                                    <span class="custom-control-label">  @Localize["Active"]</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class=" col-md-4">
+                                        <button type="submit" class="btn btn-primary btn-lg" style="width:auto; float:left">@Localize["Save"]</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="cardsPrices">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"> @Localize["CardsPrices"]</div>
+                    </div>
+
+                    <div class="card-body">
+                        <partial name="_CardsPrices" />
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="sales">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">  @Localize["Sales"]</div>
+                    </div>
+
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane " id="payments">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">  @Localize["Payments"]</div>
+                    </div>
+
+                    <table class="table table-hover">
+                        @if (Model.Payments != null)
+                        {
+                            <div class="col-xl-6">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
+                                            <thead>
+                                                <tr class="pointer">
+                                                    <th>Agent Name</th>
+                                                    <th>Payment</th>
+                                                    <th>Date</th>
+                                                    <th>Active</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th onclick="window.location='/Admin/Agents/Details/2';">
+                                                        <a href="/Admin/Agents/Details/2">Ahmed</a>
+                                                    </th>
+
+                                                    <th onclick="window.location='/Admin/Agents/Details/2';">3000</th>
+
+                                                    <th onclick="window.location='/Admin/Agents/Details/2';">27/4/2022</th>
+
+
+                                                    <th onclick="window.location='/Admin/Agents/Details/2';" class="text-center ">
+                                                        <span class="badge bg-danger badge-sm"> Not Active </span>
+                                                    </th>
+
+
+                                                    <th class="text-center ">
+                                                        <form method="post">
+                                                            <a class="text-primary" href="/Admin/Agents/Details/2">
+                                                                <i class=" fe  fe-edit-3"></i>
+                                                            </a>
+                                                            <input type="hidden" name="id" value="2">
+                                                            <button type="submit" class="btn btn-link text-danger" formaction="/Admin/Agents/Delete">
+                                                                <i class="fe fe-trash"></i>
+                                                            </button>
+                                                            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Of__UfScedFqujj2CZAbXqDNYWzWHEyE6eEm1r_dH1o4g5lnFnQGWWL1WJKkplTfu-dPm5iMyDdZCVnY72STRp8Efnwyx8e3-W-lBaauwkXVx4MIwN1kd7rn3rabb0XZnphUSE7L7g99dkvQQvUEeY0v0EqASdQc_WPRxEsDNTElejRHa1LeQom-IjRycsAKw" />
+                                                        </form>
+                                                    </th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text text-danger">No Data for Agent</div>
+                        }
+                </div>
+                </table>
+
+
+
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="loanRequests">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        @Localize["LoanRequests"]
+                    </div>
+                </div>
+
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div class="modal fade" id="change_price">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-content-demo">
+            <form action="/admin/agents/UpdateCardPrice" method="post">
+                <div class="modal-header">
+                    <h6 class="modal-title">@Localize["ChangeCardPrice"] </h6>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="agent_card_id" name="id" />
+                    <input type="hidden" value="@Model.Id" name="agentId" />
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">@Localize["Agent"]: @Model.Name</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">@Localize["Card"]:</label>
+                        <label class="form-control" id="card_name"> </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">@Localize["Cost"] ($):</label>
+                        <label class="form-control" id="card_cost"> </label>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>@Localize["Percent"]</label>
+                                <div class="input-group mb-3">
+                                    <input type="number" class="form-control" id="price-percent"
+                                           placeholder="@Localize["Percent"]">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>@Localize["Price"]</label>
+                                <div class="input-group">
+                                    <input type="number" id="card_price" name="Cost" class="form-control" placeholder="@Localize["Amount"]">
+                                    <span class="input-group-text" id="basic-addon2">$ </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-group">
+                            <label class="custom-control custom-checkbox">
+                                <input id="card_active" name="IsActive" type="checkbox" class="custom-control-input" value="true">
+                                <span class="custom-control-label">  @Localize["Active"]</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn ripple btn-success" type="submit">@Localize["Save"]</button>
+                    <button class="btn ripple btn-default" data-bs-dismiss="modal" type="button">@Localize["Close"]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- COL-END -->
+<!-- ROW-1 CLOSED -->
+@section scripts{
+    <script src="/assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/responsive.bootstrap5.min.js"></script>
+
+    <script>
+        $('#basic-datatable').DataTable({
+            language: {
+                searchPlaceholder: 'Search...',
+                sSearch: '',
+            }
+        });
+
+        function ViewChangeCardPriceModal(idd, card_name, card_cost, price, active) {
+
+            $("#agent_card_id").val(idd);
+            $("#card_name").text(card_name);
+            $("#card_cost").text(card_cost);
+            var percent = ((parseFloat(price) - parseFloat(card_cost))) / parseFloat(card_cost);
+            $("#price-percent").val(percent * 100);
+            $("#card_price").val(price);
+            if (active == 'True') {
+                $("#card_active").prop("checked", true);
+            } else {
+                $("#card_active").prop("checked", false);
+            }
+
+            $('#change_price').modal('show');
+        }
+
+        $("#card_price").on("change", function() {
+            var card_cost = parseFloat($("#card_cost").text());
+            $("#price-percent").val((parseFloat($(this).val()) - card_cost) / card_cost);
+        });
+
+        $("#price-percent").on("change", function() {
+            var card_cost = parseFloat($("#card_cost").text());
+            $("#card_price").val(card_cost + (parseFloat($(this).val()) * 100 / card_cost));
+        });
+    </script>
+}

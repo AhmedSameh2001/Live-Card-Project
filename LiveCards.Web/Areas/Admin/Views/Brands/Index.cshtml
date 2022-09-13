@@ -1,0 +1,162 @@
+﻿@model IEnumerable<LiveCards.Models.Brand>
+@using LiveCards.Models;
+@{
+    ViewBag.Title = @Localize["AllBrands"];
+
+    var AllCompayActive = CustomUserPermission.isAuthorized(AllPermissions.Companies_IsActive);
+    var isAdmin = true;
+}
+
+@section Actions{
+
+    <a href="/admin/brands/create" class="btn btn-primary mt-2">
+        <i class="fe fe-plus-circle"></i>
+
+        @Localize["NewBrand"]
+    </a>
+ }
+
+    <div class="row row-sm">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">@Localize["Search"]</h3>
+                </div>
+                <div class="card-body">
+                    <form method="get">
+
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-label">@Localize["Category"] <span class="text-red">*</span></label>
+                                    <select name="CategoryId" asp-items="ViewBag.Categories" class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-label">@Localize["Name"] <span class="text-red">*</span></label>
+                                    <input name="Name" class="form-control" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-label"> <br /> </label>
+                                    @*<input name="Name" class="form-control" />*@
+                                    <button type="submit" class="btn btn-primary btn-sm"> Search </button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        @if (Model.Count() > 0)
+    {
+        <div class="row row-sm">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">@Localize["AllBrands"]</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+                                <thead>
+                                    <tr>
+                                        <th class="wd-15p border-bottom-0">@Localize["Logo"]</th>
+                                        <th class="wd-15p border-bottom-0">@Localize["Category"]</th>
+                                        <th class="wd-15p border-bottom-0">@Localize["Name"]</th>
+                                        <th class="wd-15p border-bottom-0">@Localize["NameEn"]</th>
+                                        <th class="wd-15p border-bottom-0">@Localize["NameHe"]</th>
+
+                                        @if (isAdmin == true)
+                                        {
+                                            <th class="wd-15p border-bottom-0"></th>
+                                            <th class="wd-15p border-bottom-0"></th>
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var brand in Model)
+                                    {
+                                        <tr class="pointer" onclick="window.location='/Admin/Brands/Edit/@brand.Id">
+                                            <td>
+                                                <img src="~/images/Brands/@brand.Image" width="80" height="80" class="img-circle" alt="-" />
+                                            </td>
+                                            <td>
+                                                @brand.Category?.Name
+                                            </td>
+                                            <td>
+                                                @brand.Name
+                                            </td>
+                                            <td>
+                                                @brand.NameEn
+                                            </td>
+                                            <td>
+                                                @brand.NameHe
+                                            </td>
+                                            <td class="text-center">
+                                                @if (brand.IsActive)
+                                                {
+                                                    <span class="badge bg-success badge-sm"> @Localize["Active"] </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger badge-sm">  @Localize["InActive"] </span>
+                                                }
+                                            </td>
+                                            @if (isAdmin == true)
+                                            {
+                                                <td>
+                                                    <input type="hidden" name="Id" value="@brand.Id" />
+                                                    <a class="text-success" href="/Admin/Brands/Edit/@brand.Id">
+                                                        <i class="icon-pencil "></i>
+                                                        edit
+                                                    </a>
+                                                </td>
+
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+@section scripts{
+    <script src="/assets/admin/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/assets/admin/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/assets/admin/plugins/datatable/responsive.bootstrap5.min.js"></script>
+
+    <script>
+        $('#basic-datatable').DataTable({
+            language: {
+                searchPlaceholder: 'Search...',
+                sSearch: '',
+            }
+        });
+
+    </script>
+  }
+
+

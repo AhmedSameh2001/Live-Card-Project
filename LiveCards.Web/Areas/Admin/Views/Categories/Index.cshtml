@@ -1,0 +1,119 @@
+﻿@model IEnumerable<LiveCards.Models.Category>
+@using LiveCards.Models;
+@{
+    ViewBag.Title = @Localize["Categories"];
+
+
+    var AllCompayActive = CustomUserPermission.isAuthorized(AllPermissions.Companies_IsActive);
+    var isAdmin = true;
+
+}
+
+@section actions{
+<a href="/admin/categories/create" class="btn btn-primary mt-2"><i class="fe fe-plus-circle"></i><span>@Localize["NewCategory"] </span></a>
+}
+
+@if (CustomUserPermission.isAuthorized(AllPermissions.Companies_Index))
+{
+    <div class="form-horizontal">
+        @if (Model.Count() > 0)
+        {
+
+            <div class="row row-sm">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">@Localize["AllCategories"]</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-nowrap border-bottom" id="responsive-datatable">
+                                    <thead>
+                                        <tr>
+                                            <th class="wd-15p border-bottom-0">@Localize["Name"]</th>
+                                            <th class="wd-15p border-bottom-0">@Localize["NameEn"]</th>
+                                            <th class="wd-15p border-bottom-0">@Localize["NameHe"]</th>
+                                            <th class="wd-15p border-bottom-0">@Localize["ShowInMenu"]</th>
+                                            <th class="wd-15p border-bottom-0">@Localize["Order"]</th>
+                                            <th class="wd-15p border-bottom-0"></th>
+                                            @if (isAdmin == true)
+                                            {
+                                                <th class="wd-15p border-bottom-0"></th>
+                                            }
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var category in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @category.Name
+                                                </td>
+                                                <td>
+                                                    @category.NameEn
+                                                </td>
+                                                <td>
+                                                    @category.NameHe
+                                                </td>
+                                                <td>
+                                                    @category.ShowInMenu
+                                                </td>
+                                                <td>
+                                                    @category.Order
+                                                </td>
+
+                                                <td class="text-center">
+                                                    @if (category.IsActive)
+                                                    {
+                                                        <span class="badge bg-success badge-sm"> @Localize["Active"] </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge bg-danger badge-sm">  @Localize["InActive"] </span>
+                                                    }
+                                                </td>
+
+                                                @if (isAdmin == true)
+                                                {
+                                                    <td>
+                                                        <input type="hidden" name="Id" value="@category.Id" />
+                                                        <a class="text-success" href="/Admin/Categories/Edit/@category.Id">
+                                                            edit
+                                                            <i class="icon-pencil "></i>
+                                                        </a>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+}
+
+
+@section scripts{
+
+    @*
+    <script src="/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
+    <script src="/assets/plugins/datatable/js/jszip.min.js"></script>
+    <script src="/assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
+    <script src="/assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.html5.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.print.min.js"></script>
+    <script src="/assets/plugins/datatable/js/buttons.colVis.min.js"></script>
+    <script src="/assets/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
+    <script src="/assets/js/table-data.js"></script>*@
+                                                  }

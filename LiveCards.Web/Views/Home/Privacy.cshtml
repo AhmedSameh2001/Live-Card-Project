@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+ 
+    string lang = System.Globalization.CultureInfo.CurrentCulture.Name;
+    var dir = lang == "en" ? "ltr" : "rtl";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<h2>
+
+Lang : 
+@lang
+</h2>

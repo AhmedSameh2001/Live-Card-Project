@@ -1,0 +1,128 @@
+﻿@model IEnumerable<LiveCards.Models.Agent>
+
+@{
+    ViewData["Title"] = @Localize["Agents"];
+}
+
+
+@section Actions{
+
+<a href="/Admin/Agents/Create" class="btn btn-primary mt-2">
+    <i class="fe fe-plus-circle"></i>
+
+    @Localize["AddAgent"]
+</a>
+ }
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"> @Localize["Agents"]</h3>
+    </div>
+    <div class="card-body">
+
+        <table class="table dataTable   table-hover table-striped table-bordered table-sm">
+            <thead>
+                <tr class="text-center ">
+                    @*<th></th>*@
+                    <th>@Localize["Name"]</th>
+                    @*<th>@Localize["MainAgents"]</th>*@
+                    <th>@Localize["Email"]</th>
+                    <th>@Localize["Phone"]</th>
+                    <th>@Localize["Mobile"]</th>
+                    <th>@Localize["Credit"]</th>
+                    <th>السماح بالقرض</th>
+                    <th>@Localize["Active"]</th>
+                    <th>@Localize["DateAdded"]</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="pointer">
+                        @*  <td>
+                            <input type="checkbox" name="AgentsId" value="@item.Id" />
+
+                            </td>*@
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">
+                            <a href="/Admin/Agents/Details/@item.Id"> @item?.Name  </a>
+                        </td>
+
+
+                        @*   <td onclick="window.location='/Admin/Agents/Details/@item.Id';">
+                            @if (@item.MainAgentsName != "")
+                            {
+
+                            <label class="label label-primary border-btn border-btn-blue" style="width:100%">@item.MainAgentsName </label>
+                            }
+
+                            </td>*@
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">@item.ApplicationUser.Email</td>
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">@item.Phone</td>
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">@item.Mobile</td>
+
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">@(item.Credit != null ? item.Credit.ToString() : "")</td>
+
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';" class="text-center">
+
+                            @if (item.AllowLoan == false)
+                            {
+                                <p hidden> 0 </p>
+                                <i class="fe fe-x  text-danger "></i>
+                            }
+                            else
+                            {
+                                <p hidden> 1 </p>
+                                <i class="fe fe-check text-green "></i>
+                            }
+                        </td>
+
+                        @*<td onclick="window.location='/Admin/Agents/Details/@item.Id';"> @item.SubAgentsCount  </td>*@
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';" class="text-center ">
+                            @if (item.Active == true)
+                            {
+                                @*rounded-pill bg-info badge-sm me-1 mb-1 mt-1*@
+
+                                <span class="badge bg-success badge-sm"> @Localize["Active"] </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger badge-sm">  @Localize["InActive"] </span>
+                            }
+                        </td>
+
+                        <td onclick="window.location='/Admin/Agents/Details/@item.Id';">@item.DateAdded.ToShortDateString()</td>
+
+                        <td class="text-center ">
+                            <form method="post">
+
+                                @*   @if (AllowAgentsDetails)
+                                    {*@
+                                <a class="text-primary" href="/Admin/Agents/Details/@item.Id">
+                                    <i class=" fe  fe-edit-3"></i>
+                                    @*<i class=" fe  fe-edit"></i>*@
+                                </a>
+                                @*}*@
+                                @*   @if (AllowDeleteAgents)
+
+                                    {*@
+
+                                <input type="hidden" name="id" value="@item.Id">
+                                <button type="submit" asp-action="Delete" class="btn btn-link text-danger">
+                                    <i class="fe fe-trash"></i>
+                                </button>
+                                @*}*@
+                            </form>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+</div>                     

@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOption
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOption.Value.SupportedUICultures.Select(c => new SelectListItem
+    {
+        Value = c.Name,
+        Text = c.Name
+
+    });
+    var returnURL = string.IsNullOrEmpty(Context.Request.Path) ? "/" : $"~{Context.Request.Path.Value}";
+
+}
+<div title="@Localizer["RequestCultureProvider"] @requestCulture?.Provider?.GetType().FullName">
+    <form id="selectLanguage" method="post" asp-controller="Home" asp-action="SetLanguage" asp-area="" asp-route-returnURL="@returnURL">
+        <select class="selectpicker" name="culture" onchange="this.form.submit();" asp-for="@requestCulture.RequestCulture.UICulture.Name">
+
+            <option value="ar-EG" data-content="<i class='flag-icon flag-icon-ps' title='ps' id='ps'></i>ar"></option>
+            <option value="en" data-content="<i class='flag-icon flag-icon-us' title='us' id='us'></i>en"></option>
+            <option value="he" data-content="<i class='flag-icon flag-icon-us' title='us' id='us'></i>en"></option>
+        </select>
+    </form>
+</div>

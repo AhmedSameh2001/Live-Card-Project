@@ -1,0 +1,252 @@
+﻿@model LiveCards.Models.Card
+
+@{
+    ViewBag.Title = Localize["NewCard"];
+}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+@section actions{
+<a href="/admin/cards/" class="btn btn-link btn-float has-text"><i class="icon-stars "></i><span>@Localize["AllCards"] </span></a>
+}
+
+<div class="card">
+
+    <div class="card-header">
+        <h3 class="card-title"> @Localize["CardDetails"]</h3>
+    </div>
+
+
+    <div class="card-body">
+        <form action="/Admin/Cards/Create" method="post">
+            <div class="row">
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+
+                <div class="col-md-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label> @Localize["Name"]</label>
+
+                                @Html.TextBoxFor(m => m.Name, "", new { @class = "form-control", @required = "required" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>@Localize["Category"]</label>
+                                <select class="form-control" id="select_categories">
+                                    <option value="">@Localize["All"]</option>
+
+                                    @foreach (Category item in (List<Category>)ViewData["Categories"])
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                                @*@Html.DropDownListFor(m => m.BrandId,  (SelectList)ViewBag.CompaniesList, new { @class = "form-control" })*@
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>@Localize["Brand"]</label>
+                                <select asp-for="BrandId" class="form-control" id="select_brands">
+                                    @foreach (Brand item in (List<Brand>)ViewData["Brands"])
+                                    {
+                                        <option value="@item.Id" category-id="@item.CategoryId">   @item.Name</option>
+                                    }
+                                </select>
+                                @*@Html.DropDownListFor(m => m.BrandId,  (SelectList)ViewBag.CompaniesList, new { @class = "form-control" })*@
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>
+                                    @Localize["Cost"]
+                                </label>
+
+                                <div class="input-group mb-3">
+                                    <input asp-for="CostUSD" type="number" class="form-control  calc_percent input-cost" onchange=" calculate_price_amount();">
+
+                                    <span class="input-group-text">$</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12">
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <label>@Localize["AgentPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="AgentPercent" type="number" class="form-control " id="agent-percent" onchange=" calculate_price_amount();"
+                                                   value="@ViewBag.AgentPercent" placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control " id="agent-amount" placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @* <label>@Localize["PricePerDealer"]</label>
+                                @Html.TextBoxFor(x => x.AgentPercent, new { @class = "form-control" })*@
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <div class="form-group  price">
+                                <div class="row">
+                                    <label>@Localize["DistributorPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="SellerPercent" type="number" class="form-control" id="seller-percent" onchange=" calculate_price_amount();"
+                                                   value="@ViewBag.DealerPercent" placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control" id="seller-amount"
+                                                   placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group  price">
+                                <div class="row">
+                                    <label>@Localize["CustomerPrice"]</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input asp-for="CustomerPercent" type="number" class="form-control" id="customer-percent" onchange=" calculate_price_amount();"
+                                                   value="@ViewBag.CustomerPercent" placeholder="@Localize["Percent"]">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" disabled class="form-control" id="customer-amount" placeholder="@Localize["Amount"]">
+                                            <span class="input-group-text" id="basic-addon2">$ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>@Localize["Notes"]</label>
+                                <input asp-for="Note" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 ">
+                            <div class="form-group">
+                                <label class="custom-control custom-checkbox">
+                                    <input asp-for="Active" type="checkbox" class="custom-control-input" value="true" checked>
+                                    <span class="custom-control-label">  @Localize["Active"]
+                                    
+                                    
+                                    
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 ">
+                            <div class="form-group">
+                                <label class="custom-control custom-checkbox">
+                                    <input name="addCardToAllAgents" type="checkbox"
+                                           class="custom-control-input" value="true" checked>
+                                    <span class="custom-control-label">  @Localize["AddCardToAllAgents"]</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class=" col-md-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success pull-right">@Localize["AddCard"]</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 
+                <div class=" col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+
+                                <label class="form-label">@Localize["Image"] <span class="text-red">*</span></label>
+                                <input type="file" name="Image" class="file-input" data-main-class="input-group-xs" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+
+
+    </div>
+</div>
+
+
+
+@section scripts{
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+        $("#select_categories").on("change", function() {
+            var value = $(this).val();
+            $("#select_brands option").filter(function() {
+                $(this).toggle(value == "" || $(this).attr("category-id") == value)
+            });
+        });
+
+
+    });
+
+
+    function calculate_price_amount() {
+        var cost = parseInt($("#Cost").val());
+
+        $("#agent-amount").val(cost + (cost * parseInt($("#agent-percent").val()) / 100));
+        $("#seller-amount").val(cost + (cost * parseInt($("#seller-percent").val()) / 100));
+        $("#customer-amount").val(cost + (cost * parseInt($("#customer-percent").val()) / 100));
+        //$("#customer-percent").val( cost * percent / 100 );
+
+    }
+
+
+    $('#select_brands').select2({
+        placeholder: 'Select an option'
+    });
+
+
+</script>
+    }

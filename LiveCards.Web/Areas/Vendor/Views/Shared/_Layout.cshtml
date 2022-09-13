@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<!-- Ec breadcrumb start -->
+<div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row ec_breadcrumb_inner">
+                    <div class="col-md-6 col-sm-12">
+                        <h2 class="ec-breadcrumb-title">Vendor Dashboard</h2>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <!-- ec-breadcrumb-list start -->
+                        <ul class="ec-breadcrumb-list">
+                            <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="ec-breadcrumb-item active">Dashboard</li>
+                        </ul>
+                        <!-- ec-breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Ec breadcrumb end -->
+<!-- Vendor dashboard section -->
+<section class="ec-page-content ec-vendor-dashboard section-space-p">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Area Start -->
+            <div class="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12">
+                <div class="ec-sidebar-wrap">
+                    <!-- Sidebar Category Block -->
+                    <div class="ec-sidebar-block">
+                        <div class="ec-vendor-block">
+                            <div class="ec-vendor-block-bg"></div>
+                            <div class="ec-vendor-block-detail">
+                                <img class="v-img" src="@User.Identity." alt="vendor image">
+                                <h5>Neon Fashion</h5>
+                            </div>
+                            <div class="ec-vendor-block-items">
+                                <ul>
+                                    <li><a href="/Vendor/">@Localize["Dashboard"]</a></li>
+                                    <li><a href="/Vendor/Cards">@Localize["CardPrices"]</a></li>
+                                    <li><a href="/Vendor/Sales">@Localize["Sales"]</a></li>
+                                    <li><a href="/Vendor/Agents">@Localize["Agents"]</a></li>
+                                    @*<li><a href="vendor-settings.html">Settings (Edit)</a></li>*@
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ec-shop-rightside col-lg-9 col-md-12">
+
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+</section>

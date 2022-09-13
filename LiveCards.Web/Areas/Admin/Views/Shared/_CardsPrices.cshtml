@@ -1,0 +1,109 @@
+﻿@model LiveCards.Models.Agent
+
+
+
+<div class="row">
+
+    @*@Html.Partial("_msg")*@
+
+    <input type="hidden" name="agentId" value="@Model.Id" />
+
+
+    @*   <div id="dv_CardIds">
+    @{
+    var cards = Model.AgentCards.Where(x => x.CardId != null &&
+    x.Card.IsDeleted != true && x.Card.Active == true);
+    }
+    @foreach (var item in cards)
+    {
+    if (item.IsActive == true)
+    {
+    <input value="@item.CardId" id="CardId_@item.CardId" name="CardId" type="hidden" />
+    }
+    }
+    </div>*@
+    <div class="table-responsive">
+        <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
+            <thead>
+                <tr>
+                    @*<th>#</th>*@
+                    <th>@Localize["Category"]</th>
+                    <th>@Localize["Brand"]</th>
+                    <th>@Localize["Name"]</th>
+                    <th>@Localize["Price"]</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                @foreach (var item in Model.AgentCards)
+                {
+                    <tr>
+                        @* <td>
+                    <input value="@item.Id" name="CardId1" class="chx_Card_price mr-10 ml-10" type="checkbox"
+                    @(item .IsActive ? "checked" : "") />
+                    </td> *@
+
+                        <td>
+                            @(item.Card?.Brand?.Category?.Name )
+                        </td>
+
+                        <td>
+                            @(item.Card?.Brand?. Name )
+                        </td>
+
+                        <td>
+                            <a href="/Admin/cards/details/@item.CardId">
+                                @item.Card?.Name
+                            </a>
+                        </td>
+
+                        <td>
+                            <span id="CardPrice_@item.Id">
+
+                                @item.Cost
+
+                                @if (item.Card != null && item.Card?.CostUSD != 0)
+                                {
+                                    <span class="text-muted">
+
+                                        (@((item.Cost - item.Card?.CostUSD) * 100 / item.Card?.CostUSD) %)
+                                    </span>
+                                }
+
+                            </span>
+                        </td>
+
+                        <td class="text-center">
+                            @if (item.IsActive == true)
+                            {
+                                <span class="badge bg-success badge-sm  me-1 mb-1 mt-1">@Localize["Active"] </span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger badge-sm  me-1 mb-1 mt-1">@Localize["InActive"] </span>
+
+                            }
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm "
+                                onclick="ViewChangeCardPriceModal(@item.Id ,'@item.Card?.Name', '@item.Card?.CostUSD', '@item.Cost' ,'@item.IsActive') ">
+                                <i class="fe fe-edit"></i>   @Localize["Edit"]
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+
+
+

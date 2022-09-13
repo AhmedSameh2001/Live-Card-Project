@@ -1,0 +1,66 @@
+﻿@model LiveCards.Models.CategoryCardsViewModel
+
+<section class="section ec-product-tab section-space-m">
+    <div class="container">
+        <div class="row">
+            <!-- Product area start -->
+            <div class="col-lg-12 col-md-12">
+                <!-- Product tab area start -->
+                <div class="row space-t-50">
+                    <div class="col-md-12 section-title-block">
+                        <div class="section-title">
+                            <h2 class="ec-title">@Model.Title</h2>
+                            <p class="sub-title">Check out @Model.Title products.</p>
+                        </div>
+                        <div class="section-btn">
+                            <span class="ec-spe-pro-btn"><a class="btn btn-lg btn-primary" href="shop-left-sidebar-col-3.html">View All</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-minus-b-15">
+                    <div class="col">
+                        <!-- 1st Product tab start -->
+                        <div class="row">
+                            @foreach (var item in Model.Cards)
+                            {
+                                <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 ec-product-content">
+                                    <div class="ec-product-inner">
+                                        <div class="ec-pro-image-outer">
+                                            <div class="ec-pro-image">
+                                                <a href="product-left-sidebar.html" class="image">
+                                                    <img class="main-image"
+                                                     src="@item.Image" alt="Product" />
+                                                    <img class="hover-image"
+                                                     src="@item.Image" alt="Product" />
+                                                </a>
+                                                @*<span class="percentage">20%</span>*@
+                                            </div>
+                                        </div>
+                                        <div class="ec-pro-content">
+                                            <h5 class="ec-pro-title">
+                                                <a href="product-left-sidebar.html">
+                                                    @item.Name
+                                                </a>
+                                            </h5>
+                                            <div class="ec-pro-rat-price">
+                                                <span class="ec-price" data-bs-toggle="tooltip" data-bs-placement="top" title="Price for Agent: $40.00">
+                                                    <span class="new-price">@item.Price</span>
+                                                    @*<span class="old-price">$65.00</span>*@
+                                                </span>
+                                            </div>
+                                            <a href="#" class="add-to-cart btn btn-primary" tabindex="0" data-link-action="quickview" title="@Localize["BuyNow"] " data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
+                                                @Localize["BuyNow"]
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- ec 1st Product tab end -->
+                    </div>
+                </div>
+                <!-- Product tab area end -->
+            </div>
+        </div>
+    </div>
+</section>

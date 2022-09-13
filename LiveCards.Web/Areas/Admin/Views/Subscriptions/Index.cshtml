@@ -1,0 +1,173 @@
+﻿@model IEnumerable<LiveCards.Models.Subscription>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DealerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConnectionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CutDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SIMNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SIMCar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpenService)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutomaticRenewal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RenewPackage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SIMCarPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OldCompanyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OldNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SimStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOffer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Package)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConnectionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SIMNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SIMCar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutomaticRenewal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RenewPackage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SIMCarPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldCompanyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SimStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number.Id)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Package.Id)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

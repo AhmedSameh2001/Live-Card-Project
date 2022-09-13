@@ -1,0 +1,60 @@
+﻿@model LiveCards.Web.Controllers.LoginModel
+
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+                <div class="container" id="login-container">
+                    <div class="form-container sign-in-container">
+                        <form id="account" method="post" action="/Account/Login">
+                            @*<input type="hidden" name="ReturnUrl" value="/" />*@
+                            <h1>Login Here</h1>
+                            <div class="social-container">
+                                <a href="#" class="social facebook-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social twitter-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social gmail-icon"><i class="fab fa-google-plus-g"></i></a>
+                            </div>
+                            <span>or use your account</span>
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input asp-for="Email" placeholder="Email" autocomplete="username" aria-required="true" />
+                            @*<input type="email" placeholder="Email" />*@
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+                            <input asp-for="Password" autocomplete="current-password" aria-required="true" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+                            @*<input type="password" placeholder="Password" />*@
+
+                            <div style="text-align:left;">
+
+                                <label asp-for="RememberMe">
+                                    <input asp-for="RememberMe" style="width:inherit;" />
+                                    @Html.DisplayNameFor(m => m.RememberMe)
+                                </label>
+                            </div>
+                            <a href="#" tabindex="0" data-link-action="Reset Password" title="Reset Password" data-bs-toggle="modal" data-bs-target="#reset_modal">Forgot your password? <b class="text-primary">Reset now.</b></a>
+                            <button type="submit">Login</button>
+
+
+                        </form>
+
+
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-right">
+                                <img src="/assets/images/logo/logow-8.png" alt="Site Logo" width="200" style="width: 200px; margin-bottom: 50px;" />
+
+                                <h1 class="text-white">Welcome Back!</h1>
+                                <p>To keep connected with us please login with your personal info</p>
+                                <a class="btn ghost" id="signUp" href="#" tabindex="0" data-link-action="Sign up" title="Sign up" data-bs-toggle="modal" data-bs-target="#signup_modal">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

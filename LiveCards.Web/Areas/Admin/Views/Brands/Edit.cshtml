@@ -1,0 +1,122 @@
+﻿@model LiveCards.Models.Brand
+
+@{
+    ViewData["Title"] = @Localize["EditBrand"];
+}
+
+@section Actions{
+
+<a href="/admin/brands" class="btn btn-primary mt-2">
+    <i class="fe fe-list"></i>
+
+    @Localize["AllBrands"]
+</a>
+ }
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title"> @Localize["EditBrand"]</h3>
+    </div>
+    <div class="card-body">
+        <form method="post" action="/admin/brands/edit" enctype="multipart/form-data">
+            <div class="row">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">@Localize["Category"] <span class="text-red">*</span></label>
+                        <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control" required></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">@Localize["Name"] <span class="text-red">*</span></label>
+                        <input asp-for="Name" class="form-control" required />
+                        @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">@Localize["NameEn"] <span class="text-red">*</span></label>
+                        <input asp-for="NameEn" class="form-control" required />
+                        @Html.ValidationMessage("NameEn", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">@Localize["NameHe"] <span class="text-red">*</span></label>
+                        <input asp-for="NameHe" class="form-control" required />
+                        @Html.ValidationMessage("NameHe", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">@Localize["Order"] <span class="text-red">*</span></label>
+                        <input asp-for="Order" class="form-control" required />
+                        @Html.ValidationMessage("Order", "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <img src="@Model.Image" width="200" height="300" />
+
+
+                        <label class="form-label">@Localize["Image"] <span class="text-red">*</span></label>
+                        <input type="file" name="Image" class="file-input" data-main-class="input-group-xs" />
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input"
+                               asp-for="IsActive">
+                        <span class="custom-control-label">  @Localize["Active"]</span>
+                    </label>
+
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input"
+                               asp-for="ShowInMenu">
+                        <span class="custom-control-label">  @Localize["ShowInMenu"]</span>
+                    </label>
+
+                      <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input"
+                               asp-for="IsPopular">
+                        <span class="custom-control-label">  @Localize["IsPopular"]</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">@Localize["Save"]  <i class="icon-plus3 position-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

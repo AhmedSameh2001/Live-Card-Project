@@ -1,0 +1,552 @@
+﻿ @{
+
+      //ViewData["Title"] = "Home Page";
+
+    var CategoriesCards = (List<LiveCards.Models.CategoryCardsViewModel>) ViewBag.CategoriesCards;
+
+}
+<!-- Main Slider Start -->
+<div class="section section-space-pb">
+    <div class="container">
+        <!-- Carousel slider -->
+        <div class="ec-slider swiper-container main-slider-nav main-slider-dot">
+            <!-- Main slider -->
+            <div class="swiper-wrapper">
+                <div class="ec-slide-item swiper-slide d-flex slide-1">
+                    <img class="img-fluid" src="/assets/images/main-slider-banner/21.jpg" width="100%" />
+
+                    <div class="container align-self-center" style="position:absolute;left:0;top:45%;">
+                        <div class="row">
+                            <div class="col-sm-12 align-self-center">
+                                <div class="ec-slide-content slider-animation">
+                                    <div class="ec-slide-desc">
+                                        <a href="#" class="btn btn-lg btn-primary">
+                                            View More <i class="ecicon eci-angle-double-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ec-slide-item swiper-slide d-flex slide-2">
+                    <img class="img-fluid" src="/assets/images/main-slider-banner/20.jpg" width="100%" />
+
+                    <div class="container align-self-center" style="position:absolute;left:0;top:45%;">
+                        <div class="row">
+                            <div class="col-sm-12 align-self-center">
+                                <div class="ec-slide-content slider-animation">
+                                    <div class="ec-slide-desc">
+                                        <a href="#" class="btn btn-lg btn-primary">
+                                            View More <i class="ecicon eci-angle-double-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ec-slide-item swiper-slide d-flex slide-3">
+                    <img class="img-fluid" src="/assets/images/main-slider-banner/22.jpg" width="100%" />
+                    <div class="container align-self-center" style="position:absolute;left:0;top:45%;">
+                        <div class="row">
+                            <div class="col-sm-12 align-self-center">
+                                <div class="ec-slide-content slider-animation">
+                                    <div class="ec-slide-desc">
+                                        <a href="#" class="btn btn-lg btn-primary">
+                                            View More <i class="ecicon eci-angle-double-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
+    </div>
+</div>
+<!-- Main Slider End -->
+<!--  category Section Start -->
+<!--  For developer (More icons find in https://www.svgrepo.com/) -->
+<section class="section ec-category-section section-space-m" id="ec-bestSeller-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 section-title-block">
+                <div class="section-title">
+                    <h2 class="ec-title">Best Seller Cards</h2>
+                    <p class="sub-title">Check out our best seller cards.</p>
+                </div>
+
+                <!--<div class="section-btn">
+                    <span class="ec-spe-pro-btn"><a class="btn btn-lg btn-primary" href="shop-left-sidebar-col-3.html">View All</a></span>
+                </div>-->
+                <!-- Tab Start -->
+                <div class="ec-pro-tab">
+                    <ul class="ec-pro-tab-nav nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#x-box">XBox</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#online-game">
+                                Online Game
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#gift-cards">Gift Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#mobile-game">Mobile Game</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tab End -->
+            </div>
+
+        </div>
+        <div class="row margin-minus-b-15 margin-minus-t-15">
+            <div class="col">
+                <div class="tab-content">
+                    <!-- 1st Product tab start -->
+                    <div class="tab-pane fade show active" id="x-box">
+                        <div id="ec-cat-slider" class="ec-cat-slider owl-carousel">
+                            <div class="ec_cat_content ec_cat_content_1">
+                                <div class="ec_cat_inner ec_cat_inner-1">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/2.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_2">
+                                <div class="ec_cat_inner ec_cat_inner-2">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_3">
+                                <div class="ec_cat_inner ec_cat_inner-3">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/1.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_4">
+                                <div class="ec_cat_inner ec_cat_inner-4">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/2.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_5">
+                                <div class="ec_cat_inner ec_cat_inner-5">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_6">
+                                <div class="ec_cat_inner ec_cat_inner-6">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/1.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_7">
+                                <div class="ec_cat_inner ec_cat_inner-7">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/2.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_8">
+                                <div class="ec_cat_inner ec_cat_inner-8">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="gift-cards">
+                        <div id="ec-cat-slider" class="ec-cat-slider owl-carousel">
+                            <div class="ec_cat_content ec_cat_content_1">
+                                <div class="ec_cat_inner ec_cat_inner-1">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/2.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_2">
+                                <div class="ec_cat_inner ec_cat_inner-2">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/1.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_3">
+                                <div class="ec_cat_inner ec_cat_inner-3">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/6.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_4">
+                                <div class="ec_cat_inner ec_cat_inner-4">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/8.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_5">
+                                <div class="ec_cat_inner ec_cat_inner-5">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/10.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_6">
+                                <div class="ec_cat_inner ec_cat_inner-6">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/9.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_7">
+                                <div class="ec_cat_inner ec_cat_inner-7">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_8">
+                                <div class="ec_cat_inner ec_cat_inner-8">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/5.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="online-game">
+                        <div id="ec-cat-slider" class="ec-cat-slider owl-carousel">
+                            <div class="ec_cat_content ec_cat_content_1">
+                                <div class="ec_cat_inner ec_cat_inner-1">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/4.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_2">
+                                <div class="ec_cat_inner ec_cat_inner-2">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/5.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_3">
+                                <div class="ec_cat_inner ec_cat_inner-3">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/6.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_4">
+                                <div class="ec_cat_inner ec_cat_inner-4">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/7.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_5">
+                                <div class="ec_cat_inner ec_cat_inner-5">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/8.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_6">
+                                <div class="ec_cat_inner ec_cat_inner-6">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/9.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_7">
+                                <div class="ec_cat_inner ec_cat_inner-7">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/10.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_8">
+                                <div class="ec_cat_inner ec_cat_inner-8">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/10.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="mobile-game">
+                        <div id="ec-cat-slider" class="ec-cat-slider owl-carousel">
+                            <div class="ec_cat_content ec_cat_content_1">
+                                <div class="ec_cat_inner ec_cat_inner-1">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/9.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_2">
+                                <div class="ec_cat_inner ec_cat_inner-2">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/8.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_3">
+                                <div class="ec_cat_inner ec_cat_inner-3">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/7.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_4">
+                                <div class="ec_cat_inner ec_cat_inner-4">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/6.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_5">
+                                <div class="ec_cat_inner ec_cat_inner-5">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_6">
+                                <div class="ec_cat_inner ec_cat_inner-6">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/5.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_7">
+                                <div class="ec_cat_inner ec_cat_inner-7">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/2.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec_cat_content ec_cat_content_8">
+                                <div class="ec_cat_inner ec_cat_inner-8">
+                                    <div class="ec-cat-image">
+                                        <img src="/assets/images/best-seller/3.png" class="svg_img" alt="" />
+                                    </div>
+                                    <div class="ec-category-desc">
+                                        <span class="ec-section-btn">
+                                            <a href="shop-left-sidebar-col-3.html" class="btn-primary" tabindex="0">Card Name<span title="Category Items">(53)</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--category Section End -->
+<!-- Product tab Area Start -->
+<partial name="_CategoryMainCards" model="CategoriesCards.FirstOrDefault()" />
+
+<!-- ec Product tab Area End -->
+<!--  offer Section Start -->
+<section class="section ec-offer-section section-space-p">
+    <h2 class="d-none">Offer</h2>
+    <div class="container">
+        <div class="row ec-pos ec-ofr-bnr" data-animation="fadeIn">
+            <img src="/assets/images/offer-image/offer_bg.jpg" alt="" class="offer_bg" />
+            <div class="ec-offer-inner">
+                <div class="col-xl-5 col-md-6 col-sm-6 align-self-center ec-offer-content">
+                    <h3 class="ec-offer-stitle">Start Today !</h3>
+                    <h2 class="ec-offer-title">PUBG MOBILE UC 660</h2>
+                    <span class="ec-offer-desc">Make your first order !!!</span>
+                    <span class="ec-offer-btn">
+                        <a href="#" class="btn btn-lg btn-primary">
+                            Shop Now <i class="ecicon eci-angle-double-right" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- offer Section End -->
+<!-- Product tab Area Start -->
+<partial name="_CategoryMainCards" model="CategoriesCards.Skip(1).FirstOrDefault()" />
+
+<!-- ec Product tab Area End -->
+<!-- Product tab Area Start -->
+<partial name="_CategoryMainCards" model="CategoriesCards.Skip(2).FirstOrDefault()" />
+
+<!-- ec Product tab Area End -->

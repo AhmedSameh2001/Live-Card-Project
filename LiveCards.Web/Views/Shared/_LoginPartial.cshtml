@@ -1,0 +1,130 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<div class="align-self-center">
+    <div class="ec-header-bottons">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <!-- Header User Start -->
+            <div class="ec-header-user dropdown">
+                <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <img src="/assets/images/icons/user.svg" class="svg_img header_svg" alt="" />
+                    <div class="ec-btn-desc">
+                        <span class="ec-btn-title">My</span>
+                        <span class="ec-btn-stitle">Account</span>
+                    </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li>
+                        <a class="nav-link    " asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                            Profile
+                            @*Hello @User.Identity?.Name!*@
+                        </a>
+                    </li>
+                    <li>
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                            <button type="submit" class="nav-link  btn btn-link  ">Logout</button>
+                        </form>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- Header User End -->
+            <!-- Header Cart Start -->
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="/admin/Home" class="ec-header-btn ">
+                    <div class="header-icon">
+                        <img src="/assets/images/icons/home.svg"
+                     class="svg_img header_svg" alt="" />
+                    </div>
+                    <div class="ec-btn-desc">
+                        <span class="ec-btn-title">Admin</span>
+                        <span class="ec-btn-stitle">Dashboard</span>
+                    </div>
+                </a>
+            }
+            else if (User.IsInRole("Agent"))
+            {
+                <a href="/vendor/Home" class="ec-header-btn ">
+                    <div class="header-icon">
+                        <img src="/assets/images/icons/home.svg"
+                     class="svg_img header_svg" alt="" />
+                    </div>
+                    <div class="ec-btn-desc">
+                        <span class="ec-btn-title">Vendor</span>
+                        <span class="ec-btn-stitle">Dashboard</span>
+                    </div>
+                </a>
+            }
+            else
+            {
+                <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
+                    <div class="header-icon">
+                        <img src="/assets/images/icons/cart.svg"
+                     class="svg_img header_svg" alt="" />
+                    </div>
+
+                    <div class="ec-btn-desc">
+                        <span class="ec-btn-title">My</span>
+                        <span class="ec-btn-stitle">Orders</span>
+                    </div>
+                </a>
+            }
+
+            <!-- Header Cart End -->
+        }
+        else
+        {
+
+            <!-- Header User Start -->
+
+            <a href="#" class="  ec-header-user" data-link-action="login"
+           title="Login" data-bs-toggle="modal" data-bs-target="#login_modal">
+                <img src="/assets/images/icons/login.svg" class="svg_img header_svg header_svg_2" alt="" />
+                <div class="ec-btn-desc">
+                    <span class="ec-btn-stitle">Login</span>
+                </div>
+            </a>
+
+            <!-- Header User End -->
+            <!-- Header Cart Start -->
+            <a href="#" data-link-action="Register" data-bs-toggle="modal" data-bs-target="#signup_modal" title="Sign up"
+           class="ec-header-btn ec-side-toggle">
+                <div class="header-icon">
+                    <img src="/assets/images/icons/add-user.svg" class="svg_img header_svg header_svg_2" alt="" />
+                </div>
+                <div class="ec-btn-desc">
+                    <span class="ec-btn-stitle">Register</span>
+                </div>
+            </a>
+            <!-- Header Cart End -->
+        }
+    </div>
+</div>
+
+@*
+    <ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+    </form>
+    </li>
+    }
+    else
+    {
+    <li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+    }
+    </ul>*@
